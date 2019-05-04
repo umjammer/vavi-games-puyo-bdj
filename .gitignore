@@ -1,0 +1,6 @@
+bin/
+00000.*
+META-INF/
+etc/config/
+lib/
+tmp/

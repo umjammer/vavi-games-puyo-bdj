@@ -26,8 +26,8 @@ import org.havi.ui.HSceneFactory;
 
 /**
  * PuyoPuyoApp
- * 
- * @author <a href="mailto:vavivavi@yahoo.co.jp">Naohide Sano</a> (nsano)
+ *
+ * @author <a href="mailto:umjammer@gmail.com">Naohide Sano</a> (nsano)
  * @version 0.00 090106 nsano initial version <br>
  */
 public class PuyoPuyoApp implements Xlet {
@@ -88,7 +88,7 @@ e.printStackTrace(System.err);
 
         /** */
         private PuyoPuyo.Stage stage;
-    
+
         /** */
         private Image offscreenImage;
         /** */
@@ -101,33 +101,33 @@ e.printStackTrace(System.err);
         private Image nextImage;
         /** */
         private Image[] images;
-    
+
         /** */
         private int offScreenWidth;
         /** */
         private int offScreenHeight;
         /** */
 //        private MediaPlayer[] clips;
-    
+
         /** */
         private int[] fieldLefts, fieldTops;
         /** ぷよの幅 */
         private int puyoSize;
-    
+
         /** ゲームがスタートしたか判定 */
         private int startFlag;
         /** 一時停止・スタート判定 */
         private int stopFlag;
-    
+
         private String state = ""; // "test";
-    
+
         /** 音楽の停止 */
         public void stopClips() {
 //            for (int i = 0; i < clips.length; i++) {
 //                clips[i].stop();
 //            }
         }
-    
+
         /** */
         MyView() {
 
@@ -185,7 +185,7 @@ e.printStackTrace(System.err);
             startFlag = 0;
             stopFlag = 0;
         }
-    
+
         /** */
         private KeyListener keyListener = new KeyAdapter() {
             public void keyPressed(KeyEvent keyEvent) {
@@ -213,7 +213,7 @@ e.printStackTrace(System.err);
                     }
                 } else if (startFlag == 1 && stage.games[0].waitFlag == 0) {
                     // ゲームがスタートしていたら
-    
+
                     // ストップ
                     if (keyCode == KeyEvent.VK_S && stage.playersCount == 1) {
                         if (stopFlag == 0) {
@@ -262,7 +262,7 @@ e.printStackTrace(System.err);
                 }
             }
         };
-    
+
         /** */
         private boolean notified;
 
@@ -295,7 +295,7 @@ e.printStackTrace(System.err);
                 fieldTops[i] = (i - i % 4) / 4 * (stage.lows * puyoSize + 44);
             }
         }
-    
+
         /* */
         void stop() {
             for (int i = 0; i < stage.playersCount; i++) {
@@ -303,7 +303,7 @@ e.printStackTrace(System.err);
             }
             stopClips();
         }
-    
+
         /* */
         public void paint(Graphics g) {
 
@@ -385,12 +385,12 @@ e.printStackTrace(System.err);
             // 一括表示
             g.drawImage(offscreenImage, 0, 0, null);
         }
-    
+
         /* */
         public void play(int folder, int cn) {
 //            play(getDocumentBase(), "sound/chain/" + folder + "/" + cn + ".au");
         }
-    
+
         /* */
         public void playClip(int i) {
 //            clips[i].start();
